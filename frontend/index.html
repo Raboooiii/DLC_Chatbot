@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DLC FunBot</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/emoji-picker-element@^1.14.0/dist/index.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fredoka+One&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="chatbot-container">
+    <div class="chat-header">
+      <div class="header-left">
+        <div class="logo pulse">🤖</div>
+        <div class="chat-title">DLC FunBot</div>
+      </div>
+      <div class="header-right">
+        <button class="header-btn" id="theme-btn"><i class="fas fa-palette"></i></button>
+        <button class="header-btn" id="help-btn"><i class="fas fa-question-circle"></i></button>
+      </div>
+    </div>
+    
+    <div class="welcome-bubble bounce">
+      <div class="welcome-text">Hey there! I'm your fun assistant! 🎉</div>
+      <div class="welcome-subtext">Ask me anything or share a picture!</div>
+    </div>
+    
+    <div class="chat-box" id="chat-box">
+      <div class="bot-message pop-in">
+        <div class="message-avatar">
+          <div class="avatar bot-avatar">🤖</div>
+        </div>
+        <div class="message-content">
+          <div class="message-text">Hi friend! 👋 I can help with tech questions, explain images you send, or just chat! What would you like to do today?</div>
+          <div class="message-time">Just now</div>
+        </div>
+      </div>
+      
+      <div class="quick-replies">
+        <button class="quick-reply" data-question="How to send photos on WhatsApp?">📸 WhatsApp Help</button>
+        <button class="quick-reply" data-question="How to pay with Paytm?">💳 Paytm Guide</button>
+        <button class="quick-reply" data-question="Tell me a fun fact!">🤔 Fun Fact</button>
+      </div>
+    </div>
+    
+    <div class="input-container">
+      <form id="chat-form">
+        <div class="input-box">
+          <button type="button" class="input-btn" id="attach-btn" title="Attach file"><i class="fas fa-paperclip"></i></button>
+          <input type="file" id="file-input" accept="image/*" style="display: none;">
+          <input type="text" id="user-input" placeholder="Message FunBot..." autocomplete="off">
+          <button type="button" class="input-btn" id="emoji-btn" title="Emojis"><i class="far fa-smile"></i></button>
+          <button type="submit" class="send-btn pulse"><i class="fas fa-paper-plane"></i></button>
+        </div>
+      </form>
+      <emoji-picker id="emoji-picker" class="hidden"></emoji-picker>
+      <div class="disclaimer">FunBot may occasionally make mistakes. Always verify important info!</div>
+    </div>
+    
+    <div class="confetti-container" id="confetti-container"></div>
+  </div>
+
+  <div class="modal hidden" id="help-modal">
+    <div class="modal-content">
+      <button class="close-modal">&times;</button>
+      <h2>🌟 FunBot Help 🌟</h2>
+      <ul>
+        <li>💬 Ask tech questions about apps</li>
+        <li>📸 Upload images for analysis</li>
+        <li>🎨 Change themes with the palette button</li>
+        <li>💡 Use quick reply buttons to start chatting</li>
+        <li>😊 Add emojis to make it fun!</li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/emoji-picker-element@^1.14.0/dist/index.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
