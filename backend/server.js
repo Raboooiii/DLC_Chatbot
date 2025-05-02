@@ -5,7 +5,12 @@ const path = require('path');
 require('dotenv').config();
 
 const app = express();
-app.use(cors());
+// In server.js
+app.use(cors({
+  origin: process.env.CORS_ORIGIN || 'https://dlcfunbot.netlify.app',
+  methods: ['GET', 'POST'],
+  credentials: true
+}));
 app.use(bodyParser.json());
 
 // Serve frontend statically
