@@ -39,7 +39,7 @@ document.getElementById('chat-form').addEventListener('submit', function(e) {
     scrollToBottom();
     
     // Send to backend
-    fetch('https://dlcfunbot.onrender.com/ask', {
+    fetch('https://dlcfunbot-backend.onrender.com/ask', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ question: message })
